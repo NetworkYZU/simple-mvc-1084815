@@ -13,14 +13,13 @@ import java.util.Map;
  * @author lendle
  */
 public class Student {
-
     private String id, name;
-    private double score = -1;
+    private double score=-1;
 
     public Student(String id, String name, double score) {
         this.id = id;
         this.name = name;
-        this.score = score;
+        this.score=score;
     }
 
     public String getId() {
@@ -46,20 +45,18 @@ public class Student {
     public void setScore(double score) {
         this.score = score;
     }
-
-    private static final Map<String, Student> db = new HashMap<>();
-
-    static {
-        db.put("id1", new Student("id1", "name1", 60));
-        db.put("id2", new Student("id2", "name2", 50));
+    
+    private static Map<String, Student> db=new HashMap<>();
+    
+    static{
+        db.put("id1", new Student("id1", "name1", 63));
+        db.put("id2", new Student("id2", "name2", 55));
         db.put("id3", new Student("id3", "name3", 80));
+        db.put("id4", new Student("id4", "name4", 79));
+        db.put("id5", new Student("id5", "name5", 90));
     }
-
-    public static Student getCustomer(String id) {
+    
+    public static Student getStudent(String id){
         return db.get(id);
-    }
-
-    int getBalance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

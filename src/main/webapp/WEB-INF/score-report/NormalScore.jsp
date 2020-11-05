@@ -4,6 +4,7 @@
     Author     : lendle
 --%>
 
+<%@page import="lendle.courses.network.simplemvc.Student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <jsp:useBean id="student" 
+                        type="lendle.courses.network.simplemvc.Student"
+                        scope="request"/>
+        <%
+            Student customer=(Student)request.getAttribute("customer");
+        %>
+        <h1>Hello, <jsp:getProperty name="student" property="name"/><br/></h1>
+        你及格了！
     </body>
 </html>
